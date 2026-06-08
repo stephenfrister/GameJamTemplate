@@ -11,11 +11,15 @@ config_version=5
 [application]
 
 config/name="Godot 4.6 Template"
-run/main_scene="uid://b6eghekexdors"
+run/main_scene="uid://cqdqunjxvt2vy"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 0)
 boot_splash/show_image=false
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://b7ettr4qd00dj"
 
 [autoload]
 

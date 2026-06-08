@@ -78,4 +78,5 @@ text = "Open User Data Folder"
 [connection signal="gui_input" from="BoxContainer/VBoxContainer2/Label500ms" to="." method="_on_label_gui_input" binds= [0.5]]
 [connection signal="gui_input" from="BoxContainer/VBoxContainer2/Label100ms" to="." method="_on_label_gui_input" binds= [0.1]]
 [connection signal="gui_input" from="BoxContainer/VBoxContainer2/Label0s" to="." method="_on_label_gui_input" binds= [0.0]]
+[connection signal="pressed" from="TestTransitions" to="." method="_on_test_transitions_pressed"]
 [connection signal="pressed" from="TestUserDataFolder" to="." method="_on_test_user_data_folder_pressed"]

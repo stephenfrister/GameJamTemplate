@@ -16,13 +16,11 @@ func _on_change_transition_pressed( _toggled_on: bool, transition_time: float ) 
 	
 	pass
 
-
 func _on_test_transitions_pressed() -> void:
 	
 	emit_signal( "test_transitions" )
 	
 	pass
-
 
 func _on_label_gui_input(event: InputEvent, transition_time: float ) -> void:
 	
@@ -35,7 +33,6 @@ func _on_label_gui_input(event: InputEvent, transition_time: float ) -> void:
 	#if event is InputEventMouseButton && transition_time == 0.0 : pass
 	
 	pass
-
 
 func _on_test_user_data_folder_pressed() -> void:
 	

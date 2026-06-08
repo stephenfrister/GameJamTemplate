@@ -14,12 +14,27 @@ offset_right = 1154.0
 offset_bottom = 648.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_px1gm")
 
-[node name="Label" type="Label" parent="." unique_id=1030635836]
+[node name="Label" type="RichTextLabel" parent="." unique_id=975058325]
 offset_right = 1154.0
 offset_bottom = 648.0
+bbcode_enabled = true
 text = "Give credit to those who worked on the project
 
-Thank people and organizations who helped along the way"
+Thank people and organizations who helped along the way
+
+
+
+
+
+
+
+
+
+Sample Music by Ethan Grafton
+Track 1: Hyperfishation 
+Track 2: Melody's Melodies 
+Track 3: Just A Feeling
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 

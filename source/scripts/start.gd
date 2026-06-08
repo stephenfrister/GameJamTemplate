@@ -11,6 +11,7 @@ signal quit_appliation
 signal volume_changed
 signal play_test_sound
 signal restart_music
+signal update_music
 
 
 func _ready():
@@ -36,6 +37,7 @@ func _on_manager_data_loaded():
 	
 	_on_set_sound_controls()
 	_update_theme()
+	_update_music()
 	
 	pass
 
@@ -119,8 +121,8 @@ func _on_set_sound_controls():
 	%MusicButton.set_pressed_no_signal(Data.setting_music_enabled)
 	%SoundsButton.set_pressed_no_signal(Data.setting_sfx_enabled)
 	
-	%MusicPanel.visible =  !Data.setting_music_enabled
-	%SoundPanel.visible =  !Data.setting_sfx_enabled
+	%MusicPanel.visible = !Data.setting_music_enabled
+	%SoundPanel.visible = !Data.setting_sfx_enabled
 	
 	%MusicSlider.set_value_no_signal( Data.setting_volume_music )
 	%SoundsSlider.set_value_no_signal( Data.setting_volume_sfx )
@@ -159,7 +161,7 @@ func _on_button_theme_change( new_theme: String ) -> void:
 	pass
 
 func _update_theme() -> void:
-	print_debug("_update_theme: " + Data.setting_theme )
+	#print_debug("_update_theme: " + Data.setting_theme )
 	
 	var theme_normal = "res://assets/themes/style_box_flat_grey_default.tres"
 	var theme_hover = "res://assets/themes/style_box_flat_grey_default_hover.tres"
@@ -181,5 +183,23 @@ func _update_theme() -> void:
 	m_theme.set( "Button/styles/hover", load(theme_hover) )
 	m_theme.set( "Button/styles/normal", load(theme_normal) )
 	m_theme.set( "Button/styles/pressed", load(theme_normal) )
+	
+	pass
+
+func _on_music_pressed(track: int) -> void:
+	#print_debug("_on_music_pressed: " + str(track) )
+	
+	Data.setting_music_type = track
+	_update_music()
+	
+	pass
+
+func _update_music() -> void:
+	
+	$MarginContainer/SoundControl/MusicButton/Music1/Panel.visible = (Data.setting_music_type == 1)
+	$MarginContainer/SoundControl/MusicButton/Music2/Panel.visible = (Data.setting_music_type == 2)
+	$MarginContainer/SoundControl/MusicButton/Music3/Panel.visible = (Data.setting_music_type == 3)
+	
+	emit_signal("update_music")
 	
 	pass

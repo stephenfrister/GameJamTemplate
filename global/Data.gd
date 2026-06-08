@@ -127,8 +127,8 @@ func data_load():
 	setting_theme       = config.get_value("settings", "setting_theme", default_theme)
 	setting_music_type  = config.get_value("settings", "setting_music_type", default_music_type)
 	
-	print_debug("load setting_music_type: " + str(setting_music_type) )
-	print_debug("load setting_theme: " + str(setting_theme) )
+	#print_debug("load setting_music_type: " + str(setting_music_type) )
+	#print_debug("load setting_theme: " + str(setting_theme) )
 	
 	#print_debug("load setting_volume: " + str(default_volume) )
 	
